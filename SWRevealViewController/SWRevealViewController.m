@@ -277,7 +277,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     CGFloat rearXLocation = scaledValue(xLocation, -_c.rearViewRevealDisplacement, 0, 0, rearRevealWidth);
     
     CGFloat rearWidth = rearRevealWidth + _c.rearViewRevealOverdraw;
-    _rearView.frame = CGRectMake(rearXLocation, 0.0, rearWidth, bounds.size.height);
+    _rearView.frame = CGRectMake(rearXLocation, 20.0, rearWidth, bounds.size.height);//fix this issue with wrong yorigin
     
     CGFloat rightRevealWidth = _c.rightViewRevealWidth;
     if ( rightRevealWidth < 0) rightRevealWidth = bounds.size.width + _c.rightViewRevealWidth;
