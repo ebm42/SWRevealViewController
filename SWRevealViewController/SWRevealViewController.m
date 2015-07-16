@@ -28,7 +28,6 @@
 
 #import "SWRevealViewController.h"
 
-
 #pragma mark - StatusBar Helper Function
 
 // computes the required offset adjustment due to the status bar for the passed in view,
@@ -623,8 +622,17 @@ const int FrontViewPositionNone = 0xff;
     _frontViewPosition = FrontViewPositionLeft;
     _rearViewPosition = FrontViewPositionLeft;
     _rightViewPosition = FrontViewPositionLeft;
-    _rearViewRevealWidth = 260.0f;
-    _rearViewRevealOverdraw = 60.0f;
+	
+	NSLog(@"height mainscreen: %f", [[UIScreen mainScreen] bounds].size.height);
+	
+	_rearViewRevealWidth = 300.0f;
+	//if device is iphon 5
+	if ([[UIScreen mainScreen] bounds].size.height == 568.0f) {
+		_rearViewRevealWidth = 275.0f;
+	}
+	
+	
+	_rearViewRevealOverdraw = 60.0f;
     _rearViewRevealDisplacement = 40.0f;
     _rightViewRevealWidth = 260.0f;
     _rightViewRevealOverdraw = 60.0f;
